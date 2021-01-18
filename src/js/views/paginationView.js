@@ -33,7 +33,7 @@ class PaginationView extends View {
 
     // last page
     if (this._curPage === this._numPages && this._numPages > 1) {
-      return `${this._renderNumPages()}${this._renderButton('prev')}`;
+      return `${this._renderButton('prev')}${this._renderNumPages()}`;
     }
     //   return `
     //     <button class="btn--inline pagination__btn--prev">

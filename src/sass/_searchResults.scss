@@ -12,6 +12,9 @@
 .pagination {
   margin-top: auto;
   padding: 0 3.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
   &::after {
     content: '';
@@ -25,12 +28,18 @@
     }
     &--next {
       float: right;
+      margin-left: auto;
     }
   }
 
   &__numpages {
-    padding: 0 3rem;
-    background: #000;
+    padding: 1rem 1.5rem;
+    color: #f38e82;
+    background: #f9f5fa;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 10rem;
+    text-transform: capitalize;
   }
 }
 
