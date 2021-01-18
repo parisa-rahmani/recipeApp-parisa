@@ -11,13 +11,6 @@ import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import { async } from 'regenerator-runtime/runtime';
 
-// https://forkify-api.herokuapp.com/v2
-
-///////////////////////////////////////
-// if (module.hot) {
-//   module.hot.accept();
-// }
-
 const controlRecipe = async function () {
   try {
     const id = window.location.hash.slice(1);
@@ -35,7 +28,6 @@ const controlRecipe = async function () {
     //2) render recipe
     recipeView.render(model.state.recipe);
   } catch (err) {
-    // alert(err);
     recipeView.renderError();
   }
 };
@@ -82,7 +74,7 @@ const controlAddBookmark = function () {
   // 2) update
   recipeView.update(model.state.recipe);
 
-  // 3)render bookmark
+  // 3) render bookmark
   bookmarkView.render(model.state.bookmarks);
 };
 
@@ -117,7 +109,6 @@ const controlAddRecipe = async function (newRecipe) {
       addRecipeView.toggleWindow();
     }, MODAL_CLOSE_SEC * 1000);
   } catch (err) {
-    console.error(err);
     addRecipeView.renderError(err.message);
   }
 };

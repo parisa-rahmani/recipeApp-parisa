@@ -2,6 +2,15 @@ import icons from 'url:../../img/icons.svg'; //parcel 2
 
 export default class View {
   _data;
+  /**
+   * Render the received object to the DOM
+   * @param {object | object[]} data the data to be rendered
+   * @param {boolean} [render=true] if false, the markup created instead of rendering to the dom
+   * @returns {undefined | string} markup returned if render if false
+   * @this {object} View instance
+   * @author parisa rahmani
+   * @todo finish implemantation
+   */
   render(data, render = true) {
     if (!data || (Array.isArray(data) && data.length === 0))
       return this.renderError();
@@ -14,9 +23,19 @@ export default class View {
     this._parentElement.insertAdjacentHTML('afterbegin', markup);
   }
 
+  /**
+   * @this {object} View instance
+   * @todo clear inner content of parent element
+   */
   _clear() {
     this._parentElement.innerHTML = '';
   }
+
+  /**
+   * update inner html content without re-render it
+   * @param {object | object[]} data the data to be updated
+   * @this {object} View instance
+   */
   update(data) {
     if (!data || (Array.isArray(data) && data.length === 0))
       return this.renderError();
@@ -28,7 +47,6 @@ export default class View {
     const newElements = Array.from(newDOM.querySelectorAll('*'));
     const curElements = Array.from(this._parentElement.querySelectorAll('*'));
 
-    // console.log(newElements);
     newElements.forEach((newEl, i) => {
       const curEl = curElements[i];
 
