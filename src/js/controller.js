@@ -67,7 +67,6 @@ const controlServings = function (newServing) {
 };
 
 const controlAddBookmark = function () {
-  console.log(model.state.recipe);
   // 1)add del bokkmark
   if (!model.state.recipe.bookmarked) model.addBookmark(model.state.recipe);
   else model.deleteBookmark(model.state.recipe.id);
@@ -83,15 +82,12 @@ const controlBookmarks = function () {
 };
 
 const controlAddRecipe = async function (newRecipe) {
-  // console.log(newRecipe);
   try {
     // renderSpinner
     addRecipeView.renderSpinner();
 
     //uploadData
     await model.uploadRecipe(newRecipe);
-    console.log(model.state.recipe);
-
     // render recipe
     recipeView.render(model.state.recipe);
 
