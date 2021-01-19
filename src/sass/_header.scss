@@ -30,8 +30,8 @@
     background: none;
     font-family: inherit;
     color: inherit;
-    font-size: 1.7rem;
-    width: 30rem;
+    font-size: 1.4rem;
+    width: 22rem;
 
     &:focus {
       outline: none;
@@ -140,5 +140,52 @@
   .nav__btn--bookmarks:hover + & {
     visibility: visible;
     opacity: 1;
+  }
+}
+
+.shop {
+  padding: 1rem 0;
+  position: absolute;
+  // right: 0;
+  right: 0;
+  z-index: 10;
+  width: 40rem;
+  background-color: #fff;
+  box-shadow: 0 0.8rem 5rem 2rem rgba($color-grey-dark-1, 0.1);
+
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s 0.2s;
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    cursor: pointer;
+    height: 100%;
+    transition: all 0.3s;
+    padding: 1rem 4rem;
+    font-size: 1.5rem;
+    font-variant-caps: small-caps;
+    font-weight: 700;
+
+    &:hover {
+      background-color: $color-grey-light-2;
+    }
+  }
+
+  &:hover,
+  .nav__btn--add-shop:hover + & {
+    visibility: visible;
+    opacity: 1;
+  }
+  .wrapper {
+    display: flex;
+    align-items: baseline;
+
+    span {
+      margin-right: 0.5rem;
+    }
   }
 }

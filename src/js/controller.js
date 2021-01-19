@@ -5,7 +5,8 @@ import searchView from './views/searchView.js';
 import resultsView from './views/resultsView.js';
 import paginationView from './views/paginationView.js';
 import bookmarkView from './views/bookmarkView.js';
-import addRecipeView from './views/addRecipeView';
+import addRecipeView from './views/addRecipeView.js';
+import ingListView from './views/ingListView.js';
 
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
@@ -75,6 +76,7 @@ const controlAddBookmark = function () {
 
   // 3) render bookmark
   bookmarkView.render(model.state.bookmarks);
+  ingListView.render(model.state.bookmarks);
 };
 
 const controlBookmarks = function () {
@@ -109,8 +111,13 @@ const controlAddRecipe = async function (newRecipe) {
   }
 };
 
+const controlAddShopList = function () {
+  ingListView.render(model.state.bookmarks);
+};
+
 const init = function () {
   bookmarkView.addHandlerRender(controlBookmarks);
+  ingListView.addHandlerRenderShop(controlAddShopList);
   recipeView.addHandlerRender(controlRecipe);
   recipeView.addHandlerUpdateServings(controlServings);
   recipeView.addHandlerAddBookmark(controlAddBookmark);

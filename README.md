@@ -2,5 +2,5 @@
 
 Recipe application with costum recipe uploads.
 
-visit this project here:
+Visit Demo Here:
 https://recipe-app-parisarahmani.netlify.app

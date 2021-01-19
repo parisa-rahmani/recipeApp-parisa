@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="src/sass/main.scss" />
     <script defer src="src/js/controller.js"></script>
 
-    <title>forkify // Search over 1,000,000 recipes</title>
+    <title>forkify | Search over 1,000,000 recipes</title>
   </head>
 
   <body>
@@ -36,6 +36,32 @@
 
         <nav class="nav">
           <ul class="nav__list">
+            <li class="nav__item">
+              <button class="nav__btn nav__btn--add-shop">
+                <svg class="nav__icon">
+                  <use href="src/img/icons.svg#icon-plus-circle"></use>
+                </svg>
+                <span>ingredients List</span>
+              </button>
+              <div class="shop">
+                <ul class="shop__list">
+                  <div class="message">
+                    <div>
+                      <svg>
+                        <use href="src/img/icons.svg#icon-smile"></use>
+                      </svg>
+                    </div>
+                    <p>Find a nice recipe and see what need you do :)</p>
+                  </div>
+                  <!-- <li class="shop__item">
+                    <div class="wrapper">
+                      <span><input type="checkbox" name="item" id="" /></span> 2
+                      cup rice
+                    </div>
+                  </li> -->
+                </ul>
+              </div>
+            </li>
             <li class="nav__item">
               <button class="nav__btn nav__btn--add-recipe">
                 <svg class="nav__icon">
