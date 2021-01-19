@@ -28,7 +28,7 @@ const controlRecipe = async function () {
 
     //2) render recipe
     recipeView.render(model.state.recipe);
-    ingListView.update(model.state.bookmarks);
+    ingListView.render(model.state.bookmarks);
   } catch (err) {
     recipeView.renderError();
   }
@@ -66,7 +66,7 @@ const controlServings = function (newServing) {
 
   // recipeView.render(model.state.recipe);
   recipeView.update(model.state.recipe);
-  ingListView.update(model.state.bookmarks);
+  ingListView.render(model.state.bookmarks);
 };
 
 const controlAddBookmark = function () {
