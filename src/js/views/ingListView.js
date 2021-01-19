@@ -2,10 +2,10 @@ import View from './View.js';
 
 class IngListView extends View {
   _parentElement = document.querySelector('.shop__list');
-  _errorMessage = 'Find a nice recipe and see what need you do :)';
+  _errorMessage = 'Save a nice recipe and see what need you do :)';
   _message = '';
 
-  addHandlerRenderShop(handler) {
+  addHandlerRenderIng(handler) {
     window.addEventListener('load', handler);
   }
 

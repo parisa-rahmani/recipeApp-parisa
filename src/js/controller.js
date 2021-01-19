@@ -28,6 +28,7 @@ const controlRecipe = async function () {
 
     //2) render recipe
     recipeView.render(model.state.recipe);
+    ingListView.update(model.state.bookmarks);
   } catch (err) {
     recipeView.renderError();
   }
@@ -65,6 +66,7 @@ const controlServings = function (newServing) {
 
   // recipeView.render(model.state.recipe);
   recipeView.update(model.state.recipe);
+  ingListView.update(model.state.bookmarks);
 };
 
 const controlAddBookmark = function () {
@@ -111,18 +113,18 @@ const controlAddRecipe = async function (newRecipe) {
   }
 };
 
-const controlAddShopList = function () {
+const controlAddIngList = function () {
   ingListView.render(model.state.bookmarks);
 };
 
 const init = function () {
   bookmarkView.addHandlerRender(controlBookmarks);
-  ingListView.addHandlerRenderShop(controlAddShopList);
   recipeView.addHandlerRender(controlRecipe);
   recipeView.addHandlerUpdateServings(controlServings);
   recipeView.addHandlerAddBookmark(controlAddBookmark);
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
   addRecipeView.addHandlerUpload(controlAddRecipe);
+  ingListView.addHandlerRenderIng(controlAddIngList);
 };
 init();
