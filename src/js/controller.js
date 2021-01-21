@@ -6,7 +6,7 @@ import resultsView from './views/resultsView.js';
 import paginationView from './views/paginationView.js';
 import bookmarkView from './views/bookmarkView.js';
 import addRecipeView from './views/addRecipeView.js';
-import ingListView from './views/ingListView.js';
+import shopListView from './views/shopListView.js';
 
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
@@ -28,7 +28,7 @@ const controlRecipe = async function () {
 
     //2) render recipe
     recipeView.render(model.state.recipe);
-    ingListView.render(model.state.bookmarks);
+    // shopListView.render(model.state.bookmarks);
   } catch (err) {
     recipeView.renderError();
   }
@@ -66,7 +66,7 @@ const controlServings = function (newServing) {
 
   // recipeView.render(model.state.recipe);
   recipeView.update(model.state.recipe);
-  ingListView.render(model.state.bookmarks);
+  shopListView.render(model.state.bookmarks);
 };
 
 const controlAddBookmark = function () {
@@ -78,7 +78,7 @@ const controlAddBookmark = function () {
 
   // 3) render bookmark
   bookmarkView.render(model.state.bookmarks);
-  ingListView.render(model.state.bookmarks);
+  shopListView.render(model.state.bookmarks);
 };
 
 const controlBookmarks = function () {
@@ -100,7 +100,7 @@ const controlAddRecipe = async function (newRecipe) {
 
     // rerender bookmarkView
     bookmarkView.render(model.state.bookmarks);
-    ingListView.render(model.state.bookmarks);
+    shopListView.render(model.state.bookmarks);
 
     // change id in url
     window.history.pushState(null, '', `#${model.state.recipe.id}`);
@@ -114,8 +114,8 @@ const controlAddRecipe = async function (newRecipe) {
   }
 };
 
-const controlAddIngList = function () {
-  ingListView.render(model.state.bookmarks);
+const controlAddShopList = function () {
+  shopListView.render(model.state.bookmarks);
 };
 
 const init = function () {
@@ -126,6 +126,6 @@ const init = function () {
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
   addRecipeView.addHandlerUpload(controlAddRecipe);
-  ingListView.addHandlerRenderIng(controlAddIngList);
+  shopListView.addHandlerRenderShopList(controlAddShopList);
 };
 init();
